@@ -4,34 +4,34 @@ import Icon from "@/components/ui/icon";
 // ─── Data ───────────────────────────────────────────────────────────────────
 
 const CITIES = [
-  { id: 1, name: "Санкт-Петербург", country: "Россия", coords: "59°57′N 30°19′E", desc: "Северная столица, город белых ночей и дворцов", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", category: "Россия", rating: 4.9, sights: 48 },
-  { id: 2, name: "Стамбул", country: "Турция", coords: "41°00′N 28°57′E", desc: "Мост между Востоком и Западом, город минаретов", img: "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80", category: "Азия", rating: 4.8, sights: 62 },
-  { id: 3, name: "Прага", country: "Чехия", coords: "50°04′N 14°26′E", desc: "Город ста башен, сказочная архитектура", img: "https://images.unsplash.com/photo-1541849546-216549ae216d?w=600&q=80", category: "Европа", rating: 4.9, sights: 35 },
-  { id: 4, name: "Дубай", country: "ОАЭ", coords: "25°11′N 55°16′E", desc: "Город будущего в пустыне", img: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&q=80", category: "Азия", rating: 4.7, sights: 29 },
-  { id: 5, name: "Рим", country: "Италия", coords: "41°53′N 12°29′E", desc: "Вечный город, колыбель цивилизации", img: "https://images.unsplash.com/photo-1525874684015-58379d421a52?w=600&q=80", category: "Европа", rating: 4.9, sights: 71 },
-  { id: 6, name: "Киото", country: "Япония", coords: "35°01′N 135°45′E", desc: "Древняя столица, цветение сакуры", img: "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=600&q=80", category: "Азия", rating: 4.8, sights: 44 },
+  { id: 1, name: "Санкт-Петербург", country: "Россия", coords: "59°57′N 30°19′E", desc: "Северная столица, город белых ночей и дворцов", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", category: "Северо-Запад", rating: 4.9, sights: 48 },
+  { id: 2, name: "Москва", country: "Россия", coords: "55°45′N 37°37′E", desc: "Сердце России, столица с тысячелетней историей", img: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&q=80", category: "Центр", rating: 4.8, sights: 74 },
+  { id: 3, name: "Казань", country: "Россия", coords: "55°47′N 49°07′E", desc: "Третья столица России, где встречаются культуры", img: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=600&q=80", category: "Поволжье", rating: 4.8, sights: 32 },
+  { id: 4, name: "Сочи", country: "Россия", coords: "43°35′N 39°43′E", desc: "Южная жемчужина, курорт у Черного моря", img: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80", category: "Юг", rating: 4.7, sights: 27 },
+  { id: 5, name: "Екатеринбург", country: "Россия", coords: "56°50′N 60°35′E", desc: "Граница Европы и Азии, уральская столица", img: "https://images.unsplash.com/photo-1605800950303-bd89a2e1d77c?w=600&q=80", category: "Урал", rating: 4.7, sights: 31 },
+  { id: 6, name: "Байкал", country: "Россия", coords: "53°30′N 108°00′E", desc: "Глубочайшее озеро мира, жемчужина Сибири", img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&q=80", category: "Сибирь", rating: 4.9, sights: 19 },
 ];
 
 const SIGHTS = [
   { id: 1, name: "Эрмитаж", city: "Санкт-Петербург", type: "Музей", rating: 4.9, reviews: 24500, img: "https://images.unsplash.com/photo-1564769662533-4f00a87b4056?w=600&q=80", desc: "Один из крупнейших музеев мира, сокровищница мировой культуры" },
   { id: 2, name: "Собор Василия Блаженного", city: "Москва", type: "Храм", rating: 4.8, reviews: 31200, img: "https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=600&q=80", desc: "Символ России, шедевр русской архитектуры XVI века" },
-  { id: 3, name: "Колизей", city: "Рим", type: "Античность", rating: 4.9, reviews: 58900, img: "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600&q=80", desc: "Величественный амфитеатр Древнего Рима" },
-  { id: 4, name: "Айя-София", city: "Стамбул", type: "Храм", rating: 4.9, reviews: 41000, img: "https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=600&q=80", desc: "Великая мечеть-музей, шедевр византийской архитектуры" },
-  { id: 5, name: "Карлов мост", city: "Прага", type: "Мост", rating: 4.8, reviews: 19800, img: "https://images.unsplash.com/photo-1592906209472-a36b1f3782ef?w=600&q=80", desc: "Средневековый мост через Влтаву со статуями святых" },
-  { id: 6, name: "Бурдж Халифа", city: "Дубай", type: "Архитектура", rating: 4.7, reviews: 38100, img: "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80", desc: "Самое высокое здание в мире, 828 метров" },
+  { id: 3, name: "Петергоф", city: "Санкт-Петербург", type: "Парк", rating: 4.9, reviews: 28700, img: "https://images.unsplash.com/photo-1548625361-58a9b86aa83b?w=600&q=80", desc: "Русский Версаль, дворцово-парковый ансамбль с фонтанами" },
+  { id: 4, name: "Казанский Кремль", city: "Казань", type: "Крепость", rating: 4.8, reviews: 18400, img: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=600&q=80", desc: "Белокаменная крепость, объект Всемирного наследия ЮНЕСКО" },
+  { id: 5, name: "Кремль", city: "Москва", type: "Крепость", rating: 4.9, reviews: 45200, img: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&q=80", desc: "Главная крепость страны, резиденция президента России" },
+  { id: 6, name: "Байкал", city: "Иркутск", type: "Природа", rating: 5.0, reviews: 38100, img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&q=80", desc: "Глубочайшее озеро мира, объект Всемирного природного наследия" },
 ];
 
 const HOTELS = [
-  { id: 1, name: "Astoria Hotel", city: "Санкт-Петербург", stars: 5, price: "от 18 500 ₽", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80", rating: 4.9, reviews: 1240, tags: ["СПА", "Ресторан", "Вид на Исаакий"] },
-  { id: 2, name: "Four Seasons Istanbul", city: "Стамбул", stars: 5, price: "от 32 000 ₽", img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80", rating: 4.9, reviews: 890, tags: ["Бассейн", "Терраса", "Босфор"] },
-  { id: 3, name: "Hotel Paris Prague", city: "Прага", stars: 5, price: "от 14 200 ₽", img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80", rating: 4.8, reviews: 760, tags: ["Центр", "Арт-деко", "Ресторан"] },
-  { id: 4, name: "Armani Hotel Dubai", city: "Дубай", stars: 5, price: "от 55 000 ₽", img: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=600&q=80", rating: 4.9, reviews: 1080, tags: ["Бурдж Халифа", "Люкс", "СПА"] },
-  { id: 5, name: "Hotel de Russie", city: "Рим", stars: 5, price: "от 38 000 ₽", img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80", rating: 4.8, reviews: 640, tags: ["Сад", "Барокко", "Центр"] },
-  { id: 6, name: "The Ritz-Carlton Kyoto", city: "Киото", stars: 5, price: "от 42 000 ₽", img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80", rating: 4.9, reviews: 520, tags: ["Река", "Сады", "Традиции"] },
+  { id: 1, name: "Гостиница Астория", city: "Санкт-Петербург", stars: 5, price: "от 18 500 ₽", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80", rating: 4.9, reviews: 1240, tags: ["СПА", "Ресторан", "Вид на Исаакий"] },
+  { id: 2, name: "Four Seasons Москва", city: "Москва", stars: 5, price: "от 35 000 ₽", img: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80", rating: 4.9, reviews: 980, tags: ["Кремль рядом", "СПА", "Ресторан"] },
+  { id: 3, name: "Лотте Отель Москва", city: "Москва", stars: 5, price: "от 28 000 ₽", img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&q=80", rating: 4.8, reviews: 760, tags: ["Бассейн", "Арбат", "Люкс"] },
+  { id: 4, name: "Korston Hotel Казань", city: "Казань", stars: 5, price: "от 12 000 ₽", img: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&q=80", rating: 4.7, reviews: 580, tags: ["Центр", "Вид на Кремль", "СПА"] },
+  { id: 5, name: "Swissôtel Сочи", city: "Сочи", stars: 5, price: "от 22 000 ₽", img: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?w=600&q=80", rating: 4.8, reviews: 890, tags: ["Море", "Бассейн", "Пляж"] },
+  { id: 6, name: "Marins Park Hotel", city: "Екатеринбург", stars: 4, price: "от 8 500 ₽", img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80", rating: 4.7, reviews: 420, tags: ["Центр", "Ресторан", "Конференц-залы"] },
 ];
 
-const CITY_FILTERS = ["Все", "Россия", "Европа", "Азия"];
-const SIGHT_FILTERS = ["Все", "Музей", "Храм", "Античность", "Архитектура", "Мост"];
+const CITY_FILTERS = ["Все", "Центр", "Северо-Запад", "Поволжье", "Юг", "Урал", "Сибирь"];
+const SIGHT_FILTERS = ["Все", "Музей", "Храм", "Парк", "Крепость", "Природа"];
 const NAV_ITEMS = [
   { id: "home", label: "Главная" },
   { id: "cities", label: "Города" },
