@@ -4,33 +4,46 @@ import Icon from "@/components/ui/icon";
 // ─── Data ───────────────────────────────────────────────────────────────────
 
 const CITIES = [
-  // Центр
-  { id: 1, name: "Москва", country: "Россия", coords: "55°45′N 37°37′E", desc: "Сердце России, столица с тысячелетней историей", img: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&q=80", category: "Центр", rating: 4.8, sights: 74 },
-  // Северо-Запад
-  { id: 2, name: "Санкт-Петербург", country: "Россия", coords: "59°57′N 30°19′E", desc: "Северная столица, город белых ночей и дворцов", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", category: "Северо-Запад", rating: 4.9, sights: 48 },
-  // Поволжье
-  { id: 3, name: "Казань", country: "Россия", coords: "55°47′N 49°07′E", desc: "Третья столица России, где встречаются культуры", img: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=600&q=80", category: "Поволжье", rating: 4.8, sights: 32 },
-  { id: 4, name: "Уфа", country: "Россия", coords: "54°44′N 55°58′E", desc: "Столица Башкортостана, город на семи холмах", img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", category: "Поволжье", rating: 4.6, sights: 21 },
-  // Урал
-  { id: 5, name: "Екатеринбург", country: "Россия", coords: "56°50′N 60°35′E", desc: "Граница Европы и Азии, уральская столица", img: "https://images.unsplash.com/photo-1605800950303-bd89a2e1d77c?w=600&q=80", category: "Урал", rating: 4.7, sights: 31 },
-  { id: 6, name: "Челябинск", country: "Россия", coords: "55°09′N 61°24′E", desc: "Южноуральская столица, крупный промышленный и культурный центр", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80", category: "Урал", rating: 4.5, sights: 18 },
-  // Юг — Краснодарский край
-  { id: 7, name: "Сочи", country: "Россия", coords: "43°35′N 39°43′E", desc: "Южная жемчужина, курорт у Черного моря", img: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80", category: "Юг", rating: 4.7, sights: 27 },
-  { id: 8, name: "Краснодар", country: "Россия", coords: "45°02′N 38°58′E", desc: "Столица Кубани, южный мегаполис с мягким климатом", img: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80", category: "Юг", rating: 4.6, sights: 22 },
-  { id: 9, name: "Анапа", country: "Россия", coords: "44°53′N 37°19′E", desc: "Город-курорт с песчаными пляжами и виноградниками", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80", category: "Юг", rating: 4.6, sights: 14 },
-  { id: 10, name: "Геленджик", country: "Россия", coords: "44°33′N 38°04′E", desc: "Жемчужина Черноморского побережья, бухта мечты", img: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=600&q=80", category: "Юг", rating: 4.7, sights: 16 },
-  { id: 11, name: "Новороссийск", country: "Россия", coords: "44°43′N 37°46′E", desc: "Город-герой, крупнейший порт Черного моря", img: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80", category: "Юг", rating: 4.5, sights: 15 },
-  // Кавказ
-  { id: 12, name: "Пятигорск", country: "Россия", coords: "44°02′N 43°03′E", desc: "Курортный город у подножия Машука, жемчужина КМВ", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80", category: "Кавказ", rating: 4.7, sights: 23 },
-  { id: 13, name: "Нальчик", country: "Россия", coords: "43°29′N 43°36′E", desc: "Столица Кабардино-Балкарии у подножия Кавказских гор", img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", category: "Кавказ", rating: 4.6, sights: 17 },
-  { id: 14, name: "Владикавказ", country: "Россия", coords: "43°01′N 44°41′E", desc: "Ворота Кавказа, столица Северной Осетии", img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80", category: "Кавказ", rating: 4.6, sights: 19 },
-  { id: 15, name: "Грозный", country: "Россия", coords: "43°18′N 45°41′E", desc: "Столица Чечни, современный город с небоскрёбами", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80", category: "Кавказ", rating: 4.7, sights: 20 },
-  // ХМАО
-  { id: 16, name: "Ханты-Мансийск", country: "Россия", coords: "61°00′N 69°01′E", desc: "Столица Югры, город у слияния Оби и Иртыша", img: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80", category: "ХМАО", rating: 4.6, sights: 15 },
-  { id: 17, name: "Сургут", country: "Россия", coords: "61°15′N 73°26′E", desc: "Нефтяная столица Сибири, динамичный город-миллионник", img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", category: "ХМАО", rating: 4.5, sights: 12 },
-  { id: 18, name: "Нижневартовск", country: "Россия", coords: "60°56′N 76°33′E", desc: "Город нефтяников на берегу реки Обь", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80", category: "ХМАО", rating: 4.4, sights: 10 },
-  // Сибирь
-  { id: 19, name: "Иркутск", country: "Россия", coords: "52°17′N 104°16′E", desc: "Ворота Байкала, купеческий город с богатой историей", img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80", category: "Сибирь", rating: 4.7, sights: 24 },
+  // Москва
+  { id: 1, name: "Москва", country: "Россия", coords: "55°45′N 37°37′E", desc: "Сердце России, столица с тысячелетней историей", img: "https://images.unsplash.com/photo-1513326738677-b964603b136d?w=600&q=80", category: "Москва", rating: 4.8, sights: 74 },
+  // Санкт-Петербург
+  { id: 2, name: "Санкт-Петербург", country: "Россия", coords: "59°57′N 30°19′E", desc: "Северная столица, город белых ночей и дворцов", img: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80", category: "Санкт-Петербург", rating: 4.9, sights: 48 },
+  // Республика Карелия
+  { id: 3, name: "Петрозаводск", country: "Россия", coords: "61°47′N 34°20′E", desc: "Столица Карелии на берегу Онежского озера", img: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80", category: "Республика Карелия", rating: 4.6, sights: 18 },
+  { id: 4, name: "Сортавала", country: "Россия", coords: "61°42′N 30°41′E", desc: "Старинный карельский город у Ладожского озера", img: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=600&q=80", category: "Республика Карелия", rating: 4.7, sights: 12 },
+  // Республика Татарстан
+  { id: 5, name: "Казань", country: "Россия", coords: "55°47′N 49°07′E", desc: "Третья столица России, где встречаются культуры", img: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=600&q=80", category: "Республика Татарстан", rating: 4.8, sights: 32 },
+  // Республика Башкортостан
+  { id: 6, name: "Уфа", country: "Россия", coords: "54°44′N 55°58′E", desc: "Столица Башкортостана, город на семи холмах", img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", category: "Республика Башкортостан", rating: 4.6, sights: 21 },
+  // Свердловская область
+  { id: 7, name: "Екатеринбург", country: "Россия", coords: "56°50′N 60°35′E", desc: "Граница Европы и Азии, уральская столица", img: "https://images.unsplash.com/photo-1605800950303-bd89a2e1d77c?w=600&q=80", category: "Свердловская область", rating: 4.7, sights: 31 },
+  // Челябинская область
+  { id: 8, name: "Челябинск", country: "Россия", coords: "55°09′N 61°24′E", desc: "Южноуральская столица, крупный промышленный и культурный центр", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80", category: "Челябинская область", rating: 4.5, sights: 18 },
+  // Краснодарский край
+  { id: 9, name: "Краснодар", country: "Россия", coords: "45°02′N 38°58′E", desc: "Столица Кубани, южный мегаполис с мягким климатом", img: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80", category: "Краснодарский край", rating: 4.6, sights: 22 },
+  { id: 10, name: "Сочи", country: "Россия", coords: "43°35′N 39°43′E", desc: "Южная жемчужина, курорт у Черного моря", img: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80", category: "Краснодарский край", rating: 4.7, sights: 27 },
+  { id: 11, name: "Анапа", country: "Россия", coords: "44°53′N 37°19′E", desc: "Город-курорт с песчаными пляжами и виноградниками", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80", category: "Краснодарский край", rating: 4.6, sights: 14 },
+  { id: 12, name: "Геленджик", country: "Россия", coords: "44°33′N 38°04′E", desc: "Жемчужина Черноморского побережья, бухта мечты", img: "https://images.unsplash.com/photo-1502784444187-359ac186c5bb?w=600&q=80", category: "Краснодарский край", rating: 4.7, sights: 16 },
+  { id: 13, name: "Новороссийск", country: "Россия", coords: "44°43′N 37°46′E", desc: "Город-герой, крупнейший порт Черного моря", img: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80", category: "Краснодарский край", rating: 4.5, sights: 15 },
+  // Ставропольский край
+  { id: 14, name: "Пятигорск", country: "Россия", coords: "44°02′N 43°03′E", desc: "Курортный город у подножия Машука, жемчужина КМВ", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80", category: "Ставропольский край", rating: 4.7, sights: 23 },
+  // Кабардино-Балкарская Республика
+  { id: 15, name: "Нальчик", country: "Россия", coords: "43°29′N 43°36′E", desc: "Столица Кабардино-Балкарии у подножия Кавказских гор", img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", category: "Кабардино-Балкарская Республика", rating: 4.6, sights: 17 },
+  // Республика Северная Осетия — Алания
+  { id: 16, name: "Владикавказ", country: "Россия", coords: "43°01′N 44°41′E", desc: "Ворота Кавказа, столица Северной Осетии", img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80", category: "Республика Северная Осетия — Алания", rating: 4.6, sights: 19 },
+  // Чеченская Республика
+  { id: 17, name: "Грозный", country: "Россия", coords: "43°18′N 45°41′E", desc: "Столица Чечни, современный город с небоскрёбами", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80", category: "Чеченская Республика", rating: 4.7, sights: 20 },
+  // Ханты-Мансийский автономный округ — Югра
+  { id: 18, name: "Ханты-Мансийск", country: "Россия", coords: "61°00′N 69°01′E", desc: "Столица Югры, город у слияния Оби и Иртыша", img: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80", category: "ХМАО — Югра", rating: 4.6, sights: 15 },
+  { id: 19, name: "Сургут", country: "Россия", coords: "61°15′N 73°26′E", desc: "Нефтяная столица Сибири, динамичный город-миллионник", img: "https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=600&q=80", category: "ХМАО — Югра", rating: 4.5, sights: 12 },
+  { id: 20, name: "Нижневартовск", country: "Россия", coords: "60°56′N 76°33′E", desc: "Город нефтяников на берегу реки Обь", img: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80", category: "ХМАО — Югра", rating: 4.4, sights: 10 },
+  // Иркутская область
+  { id: 21, name: "Иркутск", country: "Россия", coords: "52°17′N 104°16′E", desc: "Ворота Байкала, купеческий город с богатой историей", img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80", category: "Иркутская область", rating: 4.7, sights: 24 },
+  // Приморский край
+  { id: 22, name: "Владивосток", country: "Россия", coords: "43°07′N 131°54′E", desc: "Тихоокеанские ворота России, город на сопках и бухтах", img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80", category: "Приморский край", rating: 4.8, sights: 29 },
+  // Камчатский край
+  { id: 23, name: "Петропавловск-Камчатский", country: "Россия", coords: "53°01′N 158°39′E", desc: "Столица Камчатки у подножия действующих вулканов", img: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80", category: "Камчатский край", rating: 4.8, sights: 22 },
+  { id: 24, name: "Елизово", country: "Россия", coords: "53°11′N 158°22′E", desc: "Ворота Камчатки, база для вулканных экспедиций", img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&q=80", category: "Камчатский край", rating: 4.6, sights: 11 },
 ];
 
 const SIGHTS = [
@@ -51,7 +64,25 @@ const HOTELS = [
   { id: 6, name: "Marins Park Hotel", city: "Екатеринбург", stars: 4, price: "от 8 500 ₽", img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80", rating: 4.7, reviews: 420, tags: ["Центр", "Ресторан", "Конференц-залы"] },
 ];
 
-const CITY_FILTERS = ["Все", "Центр", "Северо-Запад", "Поволжье", "Урал", "Юг", "Кавказ", "ХМАО", "Сибирь"];
+const CITY_FILTERS = [
+  "Все",
+  "Москва",
+  "Санкт-Петербург",
+  "Республика Карелия",
+  "Республика Татарстан",
+  "Республика Башкортостан",
+  "Свердловская область",
+  "Челябинская область",
+  "Краснодарский край",
+  "Ставропольский край",
+  "Кабардино-Балкарская Республика",
+  "Республика Северная Осетия — Алания",
+  "Чеченская Республика",
+  "ХМАО — Югра",
+  "Иркутская область",
+  "Приморский край",
+  "Камчатский край",
+];
 const SIGHT_FILTERS = ["Все", "Музей", "Храм", "Парк", "Крепость", "Природа"];
 const NAV_ITEMS = [
   { id: "home", label: "Главная" },
