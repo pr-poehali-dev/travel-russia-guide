@@ -9,7 +9,7 @@ const CITIES = [
   { id: 3, name: "Казань", country: "Россия", coords: "55°47′N 49°07′E", desc: "Третья столица России, где встречаются культуры", img: "https://images.unsplash.com/photo-1596484552834-6a58f850e0a1?w=600&q=80", category: "Поволжье", rating: 4.8, sights: 32 },
   { id: 4, name: "Сочи", country: "Россия", coords: "43°35′N 39°43′E", desc: "Южная жемчужина, курорт у Черного моря", img: "https://images.unsplash.com/photo-1555993539-1732b0258235?w=600&q=80", category: "Юг", rating: 4.7, sights: 27 },
   { id: 5, name: "Екатеринбург", country: "Россия", coords: "56°50′N 60°35′E", desc: "Граница Европы и Азии, уральская столица", img: "https://images.unsplash.com/photo-1605800950303-bd89a2e1d77c?w=600&q=80", category: "Урал", rating: 4.7, sights: 31 },
-  { id: 6, name: "Байкал", country: "Россия", coords: "53°30′N 108°00′E", desc: "Глубочайшее озеро мира, жемчужина Сибири", img: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?w=600&q=80", category: "Сибирь", rating: 4.9, sights: 19 },
+  { id: 6, name: "Иркутск", country: "Россия", coords: "52°17′N 104°16′E", desc: "Ворота Байкала, купеческий город с богатой историей", img: "https://images.unsplash.com/photo-1508193638397-1c4234db14d8?w=600&q=80", category: "Сибирь", rating: 4.7, sights: 24 },
 ];
 
 const SIGHTS = [
